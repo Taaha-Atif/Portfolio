@@ -2,7 +2,6 @@ import {useState, useEffect} from "react";
 import { Button, Row, Col, Container} from "react-bootstrap"
 import { ArrowRightCircle } from "react-bootstrap-icons"
 import headerImg from "../assets/img/header-img.svg"
-import React from "react"
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -11,13 +10,14 @@ export const Banner = () => {
     const [delta, setDelta] = useState(300-Math.random()*100);
     const period = 2000;
     
-    useEffect(() =>{
+    useEffect(() => {
         let ticker = setInterval(() => {
             tick();
-        }, delta)
+        }, delta);
 
-        return () => {clearInterval(ticker)};
-    }, [text])
+        return () => clearInterval(ticker);
+    }, [text, delta]);
+
 
     const tick = () => {
         let i = loopNum % toRotate.length;

@@ -35,7 +35,7 @@ export const Contact = () => {
         let result = response.json();
         setFormDetails(formInitialDetails);
         if(result.code === 200){
-            setStatus=({success: true, message: 'Message sent successfully'})
+            setStatus({success: true, message: 'Message sent successfully'})
         }
         else{
             setStatus({success: false, message: "Something went wrong, please try again later"})
@@ -47,7 +47,7 @@ export const Contact = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col md= {6} >
-                        <img src={contactImg}/>
+                        <img src={contactImg} alt =""/>
                     </Col>
                     <Col md={6}>
                     <h2>Get In Touch</h2>
